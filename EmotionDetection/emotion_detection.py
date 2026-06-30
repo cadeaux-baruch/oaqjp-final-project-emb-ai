@@ -33,6 +33,6 @@ def emotion_detector(text_to_analyze):
         'fear': fear_score,
         'joy': joy_score,
         'sadness': sadness_score,
-        'dominant emotion': key_max_emo
+        'dominant_emotion': key_max_emo
     }
     return emo_dict
