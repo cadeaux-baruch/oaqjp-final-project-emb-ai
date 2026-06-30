@@ -17,13 +17,32 @@ def emotion_detector(text_to_analyze):
     #dictionary slicing
     need_dict = extract['emotionPredictions'][0]['emotion']
     
+    if response.status_code == 200:
     #extracts of all scores
-    anger_score = need_dict['anger']
-    disgust_score =need_dict['disgust']
-    fear_score = need_dict['fear']
-    joy_score = need_dict['joy']
-    sadness_score = need_dict['sadness']
-    key_max_emo = max(need_dict,key=need_dict.get)
+        anger_score = need_dict['anger']
+        disgust_score =need_dict['disgust']
+        fear_score = need_dict['fear']
+        joy_score = need_dict['joy']
+        sadness_score = need_dict['sadness']
+        key_max_emo = max(need_dict,key=need_dict.get)
+    
+    elif response.status_code == 400:
+        #sets options to None when status code is 400
+        anger_score = None
+        disgust_score = None
+        fear_score = None
+        joy_score = None
+        sadness_score = None
+        key_max_emo = None
+    
+    else:
+        anger_score = None
+        disgust_score = None
+        fear_score = None
+        joy_score = None
+        sadness_score = None
+        key_max_emo = None
+
     
     
     #final output
