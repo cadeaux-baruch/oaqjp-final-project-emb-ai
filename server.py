@@ -13,6 +13,10 @@ app = Flask("Emotion Detection")
 
 @app.route('/emotionDetector')
 def emo_detect():
+    '''
+    This is the connection to the emotion detector program
+    takes textToAnalyze and processes the response
+    '''
 
     text_to_analyze = request.args.get('textToAnalyze')
 
