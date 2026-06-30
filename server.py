@@ -20,7 +20,7 @@ def emo_detect():
     resp = emotion_detector(text_to_analyze)
 
     #extract response
-    return ("For the given statement, the system response is 'anger': {}, 'disgust': {}, 'fear': {}, 'joy': {} and 'sadness': {}. The dominant emotion is {}.").format(resp['anger'], resp['disgust'], resp['fear'], resp['joy'], resp{'sadness'}, resp['dominant_emotion'])
+    return  ("For the given statement, the system response is 'anger': {}, 'disgust': {}, 'fear': {}, 'joy': {} and 'sadness': {}. The dominant emotion is {}.").format(resp['anger'], resp['disgust'], resp['fear'], resp['joy'], resp['sadness'], resp['dominant_emotion'])
 
 
 @app.route("/")
