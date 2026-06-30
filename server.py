@@ -23,6 +23,10 @@ def emo_detect():
     #collect response
     resp = emotion_detector(text_to_analyze)
 
+    #Checks for invalid response and returns error statement
+    if resp['dominant_emotion'] == None:
+        return "Invalid text! Please try again!"
+
     #extract response
     return  ("For the given statement, the system response is 'anger': {}, 'disgust': {}, 'fear': {}, 'joy': {} and 'sadness': {}. The dominant emotion is {}.").format(resp['anger'], resp['disgust'], resp['fear'], resp['joy'], resp['sadness'], resp['dominant_emotion'])
 
